@@ -23,12 +23,11 @@ function shuffle(array) {
 //  arr = shuffle(arr);
 //  console.log(arr);
 
-const parts = ["a", "b", "return", "+", " "];
+const parts = ["a", "b", "return", "+", " ","a", "b", "return", "+", " "];
 // , "=>", "{", "}", "(", ")"];
 
 const shuffleUntilWin = () => {
   try {
-
     let func = "";
     let x = "";
 
@@ -44,19 +43,22 @@ const shuffleUntilWin = () => {
     console.log(func(1, 6) == 7);
     console.log(func(1, 2) != 4);
   } catch (err) {
+    duplicateRandomPart();
+    deleteRandomPart();
     shuffleUntilWin();
   }
 };
 
-
 const deleteRandomPart = () => {
-  const randomIndex = Math.floor(Math.random()*parts.length);
+  const randomIndex = Math.floor(Math.random() * parts.length);
 
-  parts.splice(randomIndex, 1)
+  parts.splice(randomIndex, 1);
+};
 
-}
+const duplicateRandomPart = () => {
+  const randomPart = parts[Math.floor(Math.random() * parts.length)];
 
-
-
+  parts.push(randomPart);
+};
 
 shuffleUntilWin();
