@@ -23,7 +23,7 @@ function shuffle(array) {
 //  arr = shuffle(arr);
 //  console.log(arr);
 
-const parts = ["a", "b", "return", "+", " ","a", "b", "return", "+", " "];
+const parts = ["a", "b", "return", "+", " "];
 // , "=>", "{", "}", "(", ")"];
 
 const shuffleUntilWin = () => {
@@ -43,8 +43,6 @@ const shuffleUntilWin = () => {
     console.log(func(1, 6) == 7);
     console.log(func(1, 2) != 4);
   } catch (err) {
-    duplicateRandomPart();
-    deleteRandomPart();
     shuffleUntilWin();
   }
 };
